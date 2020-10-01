@@ -1,0 +1,22 @@
+{
+  "name": "js_uczelnia_wsei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotkowski/JSUczelnia.git"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kotkowski/JSUczelnia/issues"
+  },
+  "homepage": "https://github.com/kotkowski/JSUczelnia#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
+}
