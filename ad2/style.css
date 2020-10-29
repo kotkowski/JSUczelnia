@@ -1,0 +1,18 @@
+.animated {
+    animation: pulse 3s infinite;
+  }
+
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2);
+        transform: rotate(40deg);
+    }
+    100% {
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+  }
