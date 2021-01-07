@@ -116,32 +116,49 @@ function onKeyPress(ev){
     }
 
     if(soundId){
-        let soundTime = Date.now() - recordStartTime;
+       
         const sound = document.querySelector('#'+ soundId);
-        let soundObj = {
-            soundId: soundId,
-            time: soundTime
-        };
+        
+        
         const imageId = document.querySelector('#' + soundId + 'Img');
         imageId.classList.toggle('animated');
         
         sound.play();
         if(recording1){
+            soundTime = Date.now() - recordStartTime;
+            let soundObj = {
+                soundId: soundId,
+                time: soundTime
+            }
+           
+
             recordedSound.push(soundObj);
         }
         if(recording2){
             soundTime = Date.now() - recordStartTime2;
-            soundObj.soundTime = soundTime;
+            let soundObj = {
+                soundId: soundId,
+                time: soundTime
+            }
+            
             recordedSound2.push(soundObj);
         }
         if(recording3){
             soundTime = Date.now() - recordStartTime3;
-            soundObj.soundTime = soundTime;
+            let soundObj = {
+                soundId: soundId,
+                time: soundTime
+            }
+            
             recordedSound3.push(soundObj);
         }
         if(recording4){
             soundTime = Date.now() - recordStartTime4;
-            soundObj.soundTime = soundTime;
+            let soundObj = {
+                soundId: soundId,
+                time: soundTime
+            }
+            
             recordedSound4.push(soundObj);
         }
         
@@ -195,7 +212,7 @@ function onPlayBtn2(){
 }
 
 function onRecordBtn3(){
-    recordStartTime2 = Date.now();
+    recordStartTime3 = Date.now();
     recording3 = true;
     recordedSound3 = [];
 }
@@ -217,7 +234,7 @@ function onPlayBtn3(){
 
 
 function onRecordBtn4(){
-    recordStartTime2 = Date.now();
+    recordStartTime4 = Date.now();
     recording4 = true;
     recordedSound4 = [];
 }
