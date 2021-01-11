@@ -5,7 +5,7 @@ const notes = [];
 
 
 //json
-/*const note = {
+const note = {
     title: 'new note',
     content: 'simple note',
     colour: '#ff1455',
@@ -16,8 +16,8 @@ const notes = [];
 notes.push(note);
 notes.push(note);
 notes.push(note);
-*/
-//localStorage.setItem(lsNotesKey, JSON.stringify(notes));
+
+localStorage.setItem(lsNotesKey, JSON.stringify(notes));
 
 
 
@@ -88,11 +88,12 @@ function onNewNote(){
     const newNoteTitle = document.querySelector('#noteTitle').value;
     const newNoteContent = document.querySelector('#noteContent').value;
     const newNoteDate = document.querySelector('#noteDate').value;
+    const newNoteColor = document.querySelector('#noteColor').value;
 
     const note = {
         title: newNoteTitle,
         content: newNoteContent,
-        colour: '#ff1455',
+        colour: newNoteColor,
         pinned: false,
         createDate: new Date(newNoteDate)
     };
@@ -100,3 +101,4 @@ function onNewNote(){
     localStorage.setItem(lsNotesKey, JSON.stringify(notes));
     renderNotes();
 }
+

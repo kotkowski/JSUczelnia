@@ -54,7 +54,7 @@ class Db{
 
 //notes-ui.js
 class NotesUI{
-    constructor(containerSelector = 'section'){
+    constructor(containerSelector = '#section'){
         this.notesContainer = document.querySelector(containerSelector);
     }
     addNote(note){
@@ -93,7 +93,8 @@ class UI{
         return element.addEventListener(event,callback);
     }
     onNewNote(){
-
+        
+        
     }
     
 }
@@ -101,9 +102,13 @@ class UI{
 //main.js
 
 const notesObj = new Notes();
-document.querySelector('#addNewNote').addEventListener('click',onNewNote);
-const el = ui.getElement('#addNewNote');
+document.querySelector('#newNoteBtn').addEventListener('click',onNewNote);
+const el = ui.getElement('#newNoteBtn');
 ui.listen(el, 'click', onNewNote)
+function onNewNote(){
+    notesObj.addNote(new Note(document.querySelector("#noteTitle").value, document.querySelector("#noteContent").value, document.querySelector("#noteColor").value, false));
+}
+
 //notes collection
 
 //storage
