@@ -1,0 +1,15 @@
+.note{
+    border: 1px 1px black,
+}
+
+.red{
+    background-color: #ff2020;
+}
+
+.blue{
+    background-color: #2020ff;
+}
+
+.green{
+    background-color: #20ff20;
+}
