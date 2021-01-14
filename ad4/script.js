@@ -4,6 +4,7 @@ let speedX = 0;
 let speedY = 0;
 let ball = document.querySelector('#ball');
 let hole = document.querySelector('#hole');
+let flag = false;
 AppInit();
 
 function onMobileMove(ev){
@@ -12,15 +13,15 @@ function onMobileMove(ev){
     
 }
 function CheckCollision($hole, $ball){
-    var x1 = $hole.offsetLeft;
-    var y1 = $hole.offsetTop;
-    var width1 = $hole.offsetWidth;
-    var height1 = $hole.offsetHeight;
+    let x1 = $hole.offsetLeft;
+    let y1 = $hole.offsetTop;
+    let width1 = $hole.offsetWidth;
+    let height1 = $hole.offsetHeight;
     
-    var x2 = $ball.offsetLeft;
-    var y2 = $ball.offsetTop;
+    let x2 = $ball.offsetLeft;
+    let y2 = $ball.offsetTop;
 
-    if(x1 < x2 < (x1 + width1) && y1 < y2 < (y2 +height1))
+    if(x1 < x2 && x2 < (x1+width1) && y1 < y2 && y2 < (y1 +height1))
         return false;
     return true;
 }
@@ -32,8 +33,9 @@ function MoveBall(){
     ball.style.left = left + speedX + 'px';
     ball.style.top = top + speedY + 'px';
     
-    if(CheckCollision(hole, ball) != true){
-        let time = Date.now - score;
+    if(CheckCollision(hole, ball) != true && flag == false){
+        let time = (Date.now()- score)/1000 + 's';
+        flag = true;
         alert('Completed in: ' + time);
     }
 
