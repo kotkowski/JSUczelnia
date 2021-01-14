@@ -1,6 +1,5 @@
-const lsCitiesKey = "cities";
+const lsCitiesKey = 'cities';
 const notesContainer = document.getElementById('main');
-const newButton = document.getElementById('newNoteBtn');
 document.querySelector('#newNoteBtn').addEventListener('click',onNewNote);
 //List of weather notes
 let weatherNotes = [];
@@ -27,7 +26,7 @@ function removeNote(ID){
 
 function getWeather(){
     weatherNotes = JSON.parse(localStorage.getItem(lsCitiesKey)); 
-    notesContainer.innerHTML = "";
+    notesContainer.innerHTML = '';
     weatherNotes.forEach( city=>{
         console.log(city);
         const fetchPromise = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8721a1af0641554f3824e3e8f483176b&units=metric&lang=pl`);
@@ -77,7 +76,7 @@ function getWeather(){
 
             });
 
-            htmlButton.addEventListener('click', ()=>{removeNote(noteID)});
+            htmlButton.addEventListener('click', ()=>{removeNote(noteID);});
      
         });
 
@@ -92,5 +91,5 @@ function onNewNote(){
 }
 
 setInterval(function() {
-    window.location.reload();
-}, 120000); 
+    getWeather();
+}, 20000); 
